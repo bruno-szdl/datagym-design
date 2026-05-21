@@ -1,0 +1,14 @@
+{
+  "_comment": "DAG layer + canvas-chrome colours for the quests. ReactFlow can't resolve CSS custom properties inside its style props, so these ship as resolved hex literals via dist/tokens.js. `$group.key` resolves to a literal hex. Structure mirrors the emitted `dag` object exactly.",
+
+  "layer": {
+    "dark":  { "source": "$feedback.tip-dark",  "staging": "$blue.400", "intermediate": "$gold.400", "mart": "$purple.mart" },
+    "light": { "source": "$feedback.tip-light", "staging": "$blue.600", "intermediate": "$gold.600", "mart": "$purple.mart-light" }
+  },
+  "fail":           { "dark": "$feedback.mistake-dark", "light": "$feedback.mistake-light" },
+  "idleDot":        { "dark": "$navy.border-strong",    "light": "$grey.400" },
+  "edge":           { "dark": "$navy.border-strong",    "light": "$grey.400" },
+  "bgDot":          { "dark": "$navy.border",           "light": "$grey.200" },
+  "controlsBg":     { "dark": "$navy.surface",          "light": "$neutral.white" },
+  "controlsBorder": { "dark": "$navy.border",           "light": "$grey.200" }
+}

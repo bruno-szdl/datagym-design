@@ -1,0 +1,56 @@
+{
+  "_comment": "datagym's named tokens. Emitted as plain :root (light) + [data-theme='dark']. `light` is always emitted; `dark` only when present. `$group.key` resolves to var(--group-key) (datagym imports primitives.css). Anything else is a literal passthrough. This reproduces datagym's current tokens.css colour blocks - the migration is a value-for-value no-op.",
+
+  "--color-brand":        { "light": "$blue.600", "dark": "$blue.400" },
+  "--color-brand-strong": { "light": "$blue.700", "dark": "$blue.200" },
+  "--color-brand-bright": { "light": "$blue.500", "dark": "$blue.300" },
+
+  "--color-accent":       { "light": "$orange.500" },
+  "--color-accent-hover": { "light": "$orange.600" },
+  "--color-accent-text":  { "light": "$orange.700", "dark": "$orange.400" },
+  "--color-highlight":       { "light": "$gold.500" },
+  "--color-highlight-hover": { "light": "$gold.600" },
+
+  "--color-bg":            { "light": "$neutral.light",    "dark": "$navy.base" },
+  "--color-bg-subtle":     { "light": "$neutral.white",    "dark": "$navy.raised" },
+  "--color-surface":       { "light": "$neutral.white",    "dark": "$navy.surface" },
+  "--color-surface-2":     { "light": "$neutral.surface2", "dark": "$navy.surface2" },
+  "--color-border":        { "light": "$grey.200",         "dark": "$navy.border" },
+  "--color-border-strong": { "light": "$grey.300",         "dark": "$navy.border-strong" },
+  "--color-rule":          { "light": "$neutral.rule",     "dark": "$navy.rule" },
+
+  "--color-heading":        { "light": "#16202b",  "dark": "$ink.heading" },
+  "--color-text":           { "light": "#2b3a44",  "dark": "$ink.text" },
+  "--color-text-secondary": { "light": "$grey.600", "dark": "$ink.secondary" },
+  "--color-text-muted":     { "light": "$grey.500", "dark": "$ink.faint" },
+  "--color-link":           { "light": "$blue.600", "dark": "$blue.200" },
+  "--color-link-hover":     { "light": "$blue.700", "dark": "#c2d8e8" },
+
+  "--color-on-brand":  { "light": "$neutral.white" },
+  "--color-on-accent": { "light": "$neutral.white" },
+
+  "--color-accent-soft":    { "light": "rgba(255, 107, 53, 0.12)", "dark": "rgba(255, 107, 53, 0.18)" },
+  "--color-highlight-soft": { "light": "rgba(212, 160, 23, 0.14)", "dark": "rgba(212, 160, 23, 0.2)" },
+  "--color-brand-soft":     { "light": "rgba(0, 85, 140, 0.08)",   "dark": "rgba(51, 119, 168, 0.16)" },
+
+  "--color-mistake":      { "light": "#c2371f",                  "dark": "$feedback.mistake-dark" },
+  "--color-mistake-soft": { "light": "rgba(217, 58, 58, 0.09)",  "dark": "rgba(255, 110, 90, 0.13)" },
+  "--color-tip":          { "light": "$feedback.tip-light",      "dark": "$feedback.tip-dark" },
+  "--color-tip-soft":     { "light": "rgba(26, 127, 55, 0.1)",   "dark": "rgba(63, 185, 80, 0.14)" },
+  "--color-info":         { "light": "$blue.600",                "dark": "$blue.300" },
+  "--color-info-soft":    { "light": "var(--color-brand-soft)",  "dark": "rgba(51, 119, 168, 0.16)" },
+
+  "--color-code-bg": { "light": "$neutral.surface2", "dark": "$navy.code" },
+
+  "--color-floor":           { "light": "#0a1b2e", "dark": "$navy.floor" },
+  "--color-floor-2":         { "light": "#0e2640", "dark": "$navy.floor2" },
+  "--color-on-floor":        { "light": "#e6eef5" },
+  "--color-on-floor-muted":  { "light": "#8aa2b8" },
+
+  "--gradient-brand": { "light": "linear-gradient(135deg, #003a70 0%, #00558c 52%, #0076a8 100%)" },
+  "--gradient-grey":  { "light": "linear-gradient(135deg, #3f4444 0%, #707372 100%)" },
+
+  "--font-display": { "light": "'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif" },
+  "--font-body":    { "light": "'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif" },
+  "--font-mono":    { "light": "'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace" }
+}

@@ -1,0 +1,42 @@
+{
+  "_comment": "The quests' named tokens. `dark` is emitted into the Tailwind @theme {} block (the default); `light` into a [data-theme='light'] override. `$group.key` resolves to a literal hex (quests do NOT import primitives.css). Tokens with only a `dark` value are theme-independent (fonts) or auto-follow a theme-aware token via color-mix, so they appear once in @theme. The accent routes through --lab-accent / --lab-accent-strong (see README) - default #ff694a keeps dbt-quest's coral with zero config.",
+
+  "--color-base":           { "dark": "$navy.base",    "light": "$neutral.light" },
+  "--color-surface":        { "dark": "$navy.surface", "light": "$neutral.white" },
+  "--color-surface-raised": { "dark": "$navy.surface2", "light": "$neutral.white" },
+  "--color-terminal-bg":    { "dark": "$navy.floor",   "light": "$neutral.surface2" },
+  "--color-dag-bg":         { "dark": "$navy.floor",   "light": "$neutral.surface2" },
+  "--color-hint-bg":        { "dark": "$navy.surface2", "light": "#fff8c5" },
+  "--color-border":         { "dark": "$navy.border",  "light": "$grey.200" },
+  "--color-border-subtle":  { "dark": "$navy.rule",    "light": "$grey.100" },
+
+  "--color-muted":          { "dark": "$ink.muted",     "light": "$grey.600" },
+  "--color-text":           { "dark": "$ink.text",      "light": "#2b3a44" },
+  "--color-text-secondary": { "dark": "$ink.secondary", "light": "$grey.600" },
+  "--color-text-muted":     { "dark": "$ink.faint",     "light": "$grey.500" },
+
+  "--color-accent-orange":     { "dark": "var(--lab-accent, #ff694a)", "light": "var(--lab-accent-strong, #e05a3a)" },
+  "--color-accent-orange-dim": { "dark": "color-mix(in srgb, var(--color-accent-orange) 20%, transparent)" },
+  "--color-accent-bg":         { "dark": "color-mix(in srgb, var(--color-accent-orange) 10%, transparent)" },
+
+  "--color-success":        { "dark": "$feedback.tip-dark", "light": "$feedback.tip-light" },
+  "--color-success-bg":     { "dark": "color-mix(in srgb, var(--color-success) 8%, transparent)" },
+  "--color-success-border": { "dark": "color-mix(in srgb, var(--color-success) 19%, transparent)" },
+
+  "--color-fail":    { "dark": "$feedback.mistake-dark", "light": "$feedback.mistake-light" },
+  "--color-warning": { "dark": "$gold.400", "light": "$gold.600" },
+  "--color-warning-bg":     { "dark": "color-mix(in srgb, var(--color-warning) 8%, transparent)" },
+  "--color-warning-border": { "dark": "color-mix(in srgb, var(--color-warning) 25%, transparent)" },
+
+  "--color-on-accent":  { "dark": "$navy.base", "light": "$neutral.white" },
+  "--color-on-success": { "dark": "$navy.base", "light": "$neutral.white" },
+
+  "--color-icon-accent": { "dark": "$blue.300", "light": "$blue.600" },
+
+  "--pulse-cycle-color":   { "dark": "color-mix(in srgb, var(--color-fail) 50%, transparent)" },
+  "--pulse-success-color": { "dark": "color-mix(in srgb, var(--color-success) 45%, transparent)" },
+  "--pulse-reveal-color":  { "dark": "color-mix(in srgb, var(--color-accent-orange) 55%, transparent)" },
+
+  "--font-sans": { "dark": "'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif" },
+  "--font-mono": { "dark": "'JetBrains Mono', 'Fira Code', ui-monospace, monospace" }
+}
