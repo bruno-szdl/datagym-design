@@ -180,16 +180,40 @@ function emitFonts() {
   return css;
 }
 
+// ── primitives.js / primitives.d.ts (JS consumers needing raw hex values) ─────
+function emitPrimitivesJs() {
+  const clean = {};
+  for (const [group, entries] of Object.entries(primitives)) {
+    if (group.startsWith('_')) continue;
+    clean[group] = entries;
+  }
+  return (
+    header('datagym-design raw brand primitives - resolved hex literals for JS consumers.') +
+    `export const primitives = ${JSON.stringify(clean, null, 2)};\n`
+  );
+}
+
+function emitPrimitivesDts() {
+  const groups = Object.keys(primitives).filter(k => !k.startsWith('_'));
+  const props = groups.map(g => `  ${g}: Record<string, string>;`).join('\n');
+  return (
+    header('Type declarations for dist/primitives.js') +
+    `export declare const primitives: {\n${props}\n};\n`
+  );
+}
+
 // ── write ─────────────────────────────────────────────────────────────────────
 rmSync(DIST, { recursive: true, force: true });
 mkdirSync(FONTS_OUT, { recursive: true });
 
 const fontsCss = emitFonts(); // copies woff2 first, then returns css
 writeFileSync(join(DIST, 'primitives.css'), emitPrimitivesCss());
+writeFileSync(join(DIST, 'primitives.js'), emitPrimitivesJs());
+writeFileSync(join(DIST, 'primitives.d.ts'), emitPrimitivesDts());
 writeFileSync(join(DIST, 'tokens.css'), emitTokensCss());
 writeFileSync(join(DIST, 'theme.css'), emitThemeCss());
 writeFileSync(join(DIST, 'fonts.css'), fontsCss);
 writeFileSync(join(DIST, 'tokens.js'), emitTokensJs());
 writeFileSync(join(DIST, 'tokens.d.ts'), TOKENS_DTS);
 
-console.log('datagym-design: built dist/ (primitives.css, tokens.css, theme.css, fonts.css, tokens.js, tokens.d.ts + 6 fonts)');
+console.log('datagym-design: built dist/ (primitives.css/.js/.d.ts, tokens.css, theme.css, fonts.css, tokens.js, tokens.d.ts + 6 fonts)');
