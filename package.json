@@ -5,7 +5,8 @@
   "license": "SEE LICENSE IN LICENSE",
   "type": "module",
   "scripts": {
-    "build": "node scripts/build.mjs"
+    "build": "node scripts/build.mjs",
+    "prepare": "node scripts/build.mjs"
   },
   "exports": {
     "./tokens.css": "./dist/tokens.css",
